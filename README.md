@@ -1,18 +1,18 @@
 trf
 ===
 
-**windows timer resolution fix for go**  
+**windows timer resolution fix for go**
 
-  
 
-in windows, [go runtime](http://golang.org/src/pkg/runtime/os_windows.c?s=#L99) calls [ timeBeginPeriod ](http://msdn.microsoft.com/en-us/library/windows/desktop/dd757624(v=vs.85).aspx ) when initialization, and set the system timer resolution to 1ms.  
+
+in windows, [go runtime](http://golang.org/src/pkg/runtime/os_windows.c?s=#L99) calls [ timeBeginPeriod ](http://msdn.microsoft.com/en-us/library/windows/desktop/dd757624(v=vs.85).aspx ) when initialization, and set the system timer resolution to 1ms.
 
 actually, all .exe files build by go, will hold a 1ms system timer resolution until quit.
 
-[ such behavior](https://code.google.com/p/chromium/issues/detail?id=153139), which chrome used to have, is proved to be not battery friendly.  
+[ such behavior](https://code.google.com/p/chromium/issues/detail?id=153139), which chrome used to have, is proved to be not battery friendly.
 
 
-i have reported a [issue](https://code.google.com/p/go/issues/detail?id=8687) here.  
+i have reported a [issue](https://github.com/golang/go/issues/8687) here.
 
 before this behavior is changed in future, you can simply import this package in your project to solve it.
 
