@@ -21,5 +21,5 @@ before this behavior is changed in future, you can simply import this package in
 that's all. the package calls [timeEndPeriod](http://msdn.microsoft.com/en-us/library/windows/desktop/dd757626%28v=vs.85%29.aspx) on start, so the system timer resolution change made by runtime will be discarded.
 
 
-i don't know whether it will have impact on performance, but if you runs a client background, such as cow,shadowsocks,gocode on your windows laptop, i don't see any slow down but the battery life will definitely better.
+it may have impact on performance, but if your client stays background for a long time, such as [cow](https://github.com/cyfdecyf/cow) , [shadowsocks-go](https://github.com/shadowsocks/shadowsocks-go) , [gocode](https://github.com/nsf/gocode) on your windows laptop, i don't see any slow down but the battery life will be definitely better.
 
