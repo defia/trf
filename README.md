@@ -3,7 +3,7 @@ trf
 
 **windows timer resolution fix for go**
 
-
+_this issue is fixed by https://go-review.googlesource.com/#/c/17164/ in go 1.6 , it is no longer needed after go 1.6._
 
 in windows, [go runtime](http://golang.org/src/pkg/runtime/os_windows.c?s=#L99) calls [ timeBeginPeriod ](http://msdn.microsoft.com/en-us/library/windows/desktop/dd757624(v=vs.85).aspx ) when initialization, and set the system timer resolution to 1ms.
 
