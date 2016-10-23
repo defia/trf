@@ -1,9 +1,6 @@
 package trf
 
-import (
-	"log"
-	"syscall"
-)
+import "syscall"
 
 const (
 	DLL      = "winmm.dll"
@@ -11,16 +8,6 @@ const (
 )
 
 func init() {
-	winmm, err := syscall.LoadLibrary(DLL)
-	if err != nil {
-		log.Println(err)
-		return
-	}
-	c, err := syscall.GetProcAddress(syscall.Handle(winmm), FUNCTION)
-	if err != nil {
-		log.Println(err)
-		return
-	}
-	syscall.Syscall(c, 1, uintptr(1), 0, 0)
+	syscall.NewLazyDLL("winmm.dll").NewProc("timeEndPeriod").Call(1)
 
 }
