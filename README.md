@@ -3,9 +3,7 @@ trf
 
 **windows timer resolution fix for go**
 
-_this issue is fixed by https://go-review.googlesource.com/#/c/17164/ in go 1.6 , it is no longer needed after go 1.6._
-
-_update: go 1.7 revert the above changes, so you may want to import this package again._
+_[this issue](https://github.com/golang/go/issues/8687) was once fixed by https://go-review.googlesource.com/#/c/17164/ in go 1.6 , but go 1.7 revert the above changes by some reasons , so you may want to import this package again in go 1.7._
 
 > https://tip.golang.org/doc/go1.7
 
